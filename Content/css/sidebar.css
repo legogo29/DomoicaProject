@@ -117,7 +117,7 @@ footer {
   }
 }
 
-/*sop navbar collapse*/
+/*sop navbar collapse  https://stackoverflow.com/questions/23535289/bootstrap-3-disable-navbar-collapse#23536146*/
 .navbar-collapse.collapse {
   display: block!important;
 }
