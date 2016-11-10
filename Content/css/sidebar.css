@@ -17,6 +17,11 @@ footer {
   height: 250px;
 }
 
+.list-group-item.active {
+  background-color: rgb(92, 184, 92);
+  border-color: rgb(92, 184, 92);
+}
+
 /*
  * Off Canvas
  * --------------------------------------------------
