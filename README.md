@@ -1,1 +1,1 @@
-# DomoicaProject
+# DomoticaProject
