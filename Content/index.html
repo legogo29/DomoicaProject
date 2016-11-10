@@ -50,7 +50,7 @@
           <button type="button" class="btn btn-success btn-xs" data-toggle="offcanvas">Toggle nav</button>
         </p>
         <div class="row">
-          <div class="col-xs-6 col-lg-4" id="field1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:250px; background-color:#EEE;">
+          <div class="col-xs-6 col-lg-4" id="field1" ondrop="drop(event)" ondragover="allowDrop(event)">
             <div class="panel panel-default">
               <div class="panel-body">
                 <h2>Heading 1</h2>
@@ -130,11 +130,15 @@
       // console.log(ev.target.parentElement);
       target = ev.target
       while (!target.hasAttribute("ondrop")){
-        console.log(target + "  " + target.hasAttribute("ondrop"));
+        // console.log(target + "  " + target.hasAttribute("ondrop"));
         target = target.parentElement;
       }
+      prevtag = dataElement.parentElement;
+      console.log(dataElement.parentElement);
+      targetHTML = target.innerHTML;
       target.innerHTML = "";
       target.appendChild(dataElement);
+      prevtag.innerHTML = targetHTML;
   }
   </script>
 
