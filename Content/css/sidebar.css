@@ -191,6 +191,9 @@ footer {
  -webkit-transition: .4s;
  transition: .4s;
  font-family: sans-serif;
+ /*padding-top: 4px;*/
+ line-height:26px;
+ padding-left: 2px;
 }
 
 input:checked + .slider {
