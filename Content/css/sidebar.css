@@ -16,6 +16,9 @@ footer {
 .panel{
   height: 250px;
 }
+#panellogin {
+  height: auto !important;
+}
 
 .list-group-item.active {
   background-color: rgb(92, 184, 92);

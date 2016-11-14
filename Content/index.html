@@ -46,12 +46,9 @@
         </div>
       </div><!--/.sidebar-offcanvas-->
       <div class="col-xs-12">
-        <p class="visible-xs">
-          <button type="button" class="btn btn-success btn-xs" data-toggle="offcanvas">Toggle nav</button>
-        </p>
         <div class="row">
           <div class="col-xs-6 col-lg-4" id="field1" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div id="panel1" class="panel panel-default" draggable="true" ondragstart="drag(event)">
+            <div id="panellogin" class="panel panel-default" draggable="true" ondragstart="drag(event)">
               <div class="panel-body">
                 <h2>Heading 1</h2>
                 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
@@ -129,7 +126,7 @@
       dataElement = document.getElementById(data);
       // console.log(ev.target.parentElement);
       target = ev.target
-      while (!target.hasAttribute("ondrop")){
+      while (!target.hasAttribute("ondrop")){  // find first parent with ondrop attribute, that is the one calling this function
         // console.log(target + "  " + target.hasAttribute("ondrop"));
         target = target.parentElement;
       }
