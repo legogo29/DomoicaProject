@@ -1,60 +1,221 @@
-/* Sidebar */
-#sidebar-wrapper
-{
-    z-index: 1;
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}
+
+.panel{
+  height: 250px;
+}
+#panellogin {
+  height: auto !important;
+}
+
+.list-group-item.active {
+  background-color: rgb(92, 184, 92);
+  border-color: rgb(92, 184, 92);
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+
+/*bigger screens*/
+.row-offcanvas {
+ position: relative;
+ -webkit-transition: all .25s ease-out;
+      -o-transition: all .25s ease-out;
+         transition: all .25s ease-out;
+}
+
+.row-offcanvas-right {
+ right: 0;
+}
+
+.row-offcanvas-left {
+ left: 0;
+}
+
+.row-offcanvas-right
+.sidebar-offcanvas {
+ right: -25%; /* 6 columns */
+}
+
+.row-offcanvas-left
+.sidebar-offcanvas {
+ left: -25%; /* 6 columns */
+}
+
+.row-offcanvas-right.active {
+ right: 25%; /* 6 columns */
+}
+
+.row-offcanvas-left.active {
+ left: 25%; /* 6 columns */
+}
+
+.sidebar-offcanvas {
+ position: absolute;
+ top: 0;
+ /*width: 50%; /* 6 columns */
+}
+
+.sidebar-toggle {
+ display: block;
+ float: left;
+}
+
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
     position: absolute;
-    width: 0;
-    height: 25%;
-    overflow-y: hidden;
-    background: #d8d8d8;
-    opacity: 0.9;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+  .sidebar-toggle {
+   margin-left: 15px;
+   margin-right: 0px;
+  }
 }
 
-/* Always take up entire screen */
-#header-wrapper
-{
-    width: 100%;
-    position: absolute;
-    padding: 15px;
+/*sop navbar collapse  https://stackoverflow.com/questions/23535289/bootstrap-3-disable-navbar-collapse#23536146*/
+.navbar-collapse.collapse {
+  display: block!important;
 }
 
-
-
-/* Change with of sidebar from 0 to 250px */
-#wrapper.menuDisplayed #sidebar-wrapper
-{
-    width: 250px;
+.navbar-nav>li, .navbar-nav {
+  float: left !important;
 }
 
-/* Since we added left padding, we need to shrink the width by 250px */
-#wrapper.menuDisplayed #header-wrapper
-{
-    padding-left: 250px;
+.navbar-nav.navbar-right:last-child {
+  margin-right: -15px !important;
 }
 
-
-
-/* Sidebar styling - the entire ul list */
-.sidebar-nav
-{
-    padding: 0;
-    list-style: none;
+.navbar-right, .navbar-collapse {
+  float: right!important;
+  border-top-style: none;
+  box-shadow: none;
+}
+.navbar-header {
+  float: left;
 }
 
-.sidebar-nav li
-{
-    text-indent: 20px;
-    line-height: 40px;
+.navbar-collapse > ul {
+  margin: 0px;
 }
 
-.sidebar-nav li a
-{
-    display: block;
-    text-decoration: none;
-    color: #32750f;
+.navbar-collapse > ul > li > a {
+  /*height: 50px;*/
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.navbar-text{
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
-.sidebar-nav :hover
-{
-    background: white;
+/* The switch - the box around the slider */
+.switch {
+ position: relative;
+ display: inline-block;
+ width: 60px;
+ height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #ccc;
+ -webkit-transition: .4s;
+ transition: .4s;
+}
+
+.slider:before {
+ position: absolute;
+ content: "off";
+ height: 26px;
+ width: 26px;
+ left: 4px;
+ bottom: 4px;
+ background-color: white;
+ -webkit-transition: .4s;
+ transition: .4s;
+ font-family: sans-serif;
+ /*padding-top: 4px;*/
+ line-height:26px;
+ padding-left: 2px;
+}
+
+input:checked + .slider {
+ background-color: #2196F3;
+}
+
+input:focus + .slider {
+ box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+ -webkit-transform: translateX(26px);
+ -ms-transform: translateX(26px);
+ transform: translateX(26px);
+ content: "on";
+}
+
+/* Rounded sliders */
+.slider.round {
+ border-radius: 34px;
+}
+
+.slider.round:before {
+ border-radius: 50%;
 }
